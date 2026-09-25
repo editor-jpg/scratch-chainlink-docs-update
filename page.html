@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head><title>How Resolution Works on Predict</title></head>
+<body>
+<h1>How Resolution Works on Predict</h1>
+
+<p>As of March 2026, most new markets on Predict are served by <a href="https://news.predict.fun/predict-x-uma-automated-resolutions-are-here/">UMA's Optimistic Oracle</a>. Crypto price markets are the exception, and resolve via Chainlink instead &mdash; see <a href="#markets-resolved-via-chainlink">Markets Resolved via Chainlink</a> below.</p>
+
+<p><strong>The TL;DR?</strong> Faster, automated resolutions with less human intervention and more on-chain goodness.</p>
+
+<p>As UMA's favored prediction market partner on BNB Chain, Predict is among the first platforms to integrate UMA's automated resolution infrastructure at this scale.</p>
+
+<h3>What Is UMA?</h3>
+
+<p>UMA (<em>Universal Market Access</em>) is a decentralized oracle protocol by Risk Labs. It brings real-world data (election results, sports scores, economic figures, and more) onto blockchains without a need for centralized authorities.</p>
+
+<p>Rather than pulling from a single data feed, UMA uses an optimistic oracle model: anyone can submit a resolution proposal &mdash; and it's considered correct unless challenged (the optimistic part). This way, resolutions tend to be much quicker in straightforward cases, and appropriately contested in case of disagreement.</p>
+
+<p>With this infrastructure, UMA powers some of the largest dApps and prediction markets available, including Polymarket.</p>
+
+<h3>How the Resolution Process Works</h3>
+
+<h4>The Proposal</h4>
+
+<p>Once a market expires and the outcome is known, anyone can submit a resolution proposal by:</p>
+<ul>
+<li>Selecting the winning outcome</li>
+<li>Posting a <strong>bond</strong> (collateral that will be forfeited if the proposal is incorrect)</li>
+<li>Submitting it to the UMA Oracle</li>
+</ul>
+<p>If the proposal goes undisputed, the proposer recovers their bond plus a reward for honest participation.</p>
+
+<h4>The Challenge Period</h4>
+
+<p>After a proposal is submitted, a short window opens during which anyone can dispute it.</p>
+<ul>
+<li><strong>In case of no dispute:</strong> the proposal is accepted and the market resolves. This is the most common path.</li>
+<li><strong>In case of dispute:</strong> a second proposal round begins. If that is also disputed, the question escalates to a full UMA token holder vote.</li>
+</ul>
+
+<h4>Dispute and Escalation</h4>
+
+<p>In case of dispute, the challenger posts a "counter-bond" of equal size. This triggers either a new proposal round or, if it's the second dispute, a structured debate and vote.</p>
+
+<p>During the debate period, both sides can submit evidence. UMA token holders then vote on the correct outcome, with economic incentives designed to reward accuracy and penalize dishonesty.</p>
+
+<h4>The Resolution</h4>
+
+<p>Once the challenge period passes without dispute (or once a vote concludes) the market resolves:</p>
+<ul>
+<li><strong>Winning shares</strong> become redeemable for $1 each</li>
+<li><strong>Losing shares</strong> become worthless</li>
+<li>Trading on the market closes</li>
+</ul>
+
+<h3>How Long Does Resolution Take?</h3>
+
+<p>In cases where the outcome is undisputed, it takes <strong>roughly two hours</strong> for the market to resolve. In a dispute, this timeline can extend for several hours to a day (and in case of UMA vote escalation, it can be as long as a week).</p>
+
+<p>With that said, with the economic incentives at play, the vast majority of markets are resolved undisputed.</p>
+
+<h3 id="markets-resolved-via-chainlink">Markets Resolved via Chainlink</h3>
+
+<p>Not every market on Predict goes through the UMA process above. Crypto price markets &mdash; for example, "Will BTC be above $100k on March 1?" &mdash; resolve directly against a <a href="https://chain.link">Chainlink</a> price feed instead, since the outcome is a verifiable on-chain price rather than a real-world event that needs a proposal and dispute window.</p>
+
+<p>You can independently check the price data behind these resolutions through Chainlink's own self-service portal at <a href="https://app.chain.link/streams">app.chain.link/streams</a>.</p>
+
+<h3>What This Means for Predict Users</h3>
+
+<p>Predict's integration with UMA means resolutions are:</p>
+<ul>
+<li><strong>Automated:</strong> no manual intervention required in the standard case</li>
+<li><strong>Fast:</strong> most markets settle within hours of the outcome being known</li>
+<li><strong>Trustless:</strong> outcomes are verified and settled on-chain</li>
+<li><strong>Disputable:</strong> any user can challenge an incorrect proposal, keeping the system honest</li>
+</ul>
+
+<p>This infrastructure also allows Predict to expand its market coverage significantly, and lays the groundwork for future features like user-generated markets.</p>
+
+</body>
+</html>
